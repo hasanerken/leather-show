@@ -9,9 +9,16 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "dependencies": {
+    "typescript": "^5.1.6"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.39.8",
+    "@bg-dev/nuxt-naiveui": "^1.2.2",
     "@nuxt/devtools": "latest",
     "@types/node": "^18.16.19",
+    "eslint": "^8.45.0",
+    "naive-ui": "^2.34.4",
     "nuxt": "^3.6.5"
   }
 }
