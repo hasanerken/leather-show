@@ -2,8 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   routeRules: {
-    '/auth/login/**': { ssr: false },
+    // '/auth/login/**': { ssr: false },
   },
+  ssr: false,
   modules: [
     '@bg-dev/nuxt-naiveui',
     '@nuxtjs/tailwindcss',
