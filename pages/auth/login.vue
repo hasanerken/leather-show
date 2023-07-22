@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FormInst, FormItemRule, FormRules, FormValidationError } from 'naive-ui'
+import type { FormInst, FormItemRule, FormRules } from 'naive-ui'
 
 // const { auth } = useSupabaseAuthClient()
 
@@ -43,17 +43,7 @@ const rules: FormRules = {
 const router = useRouter()
 function handlePasswordInput() {
 }
-function handleValidateButtonClick(e: MouseEvent) {
-  e.preventDefault()
-  formRef.value?.validate(
-    (errors: Array<FormValidationError> | undefined) => {
-      if (!errors) {
-        // signIn()
-        router.push({ name: 'auth-profile' })
-      }
-      else { message.error('Invalid') }
-    },
-  )
+function handleValidateButtonClick() {
 }
 const errorMsg = ref(null)
 
@@ -105,9 +95,6 @@ const errorMsg = ref(null)
         </n-row>
       </n-form>
     </n-card>
-    <div>
-      {{ errorMsg }}
-    </div>
   </div>
 </template>
 
