@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   routeRules: {
     // '/auth/login/**': { ssr: false },
   },
-  ssr: false,
   modules: [
     '@bg-dev/nuxt-naiveui',
     '@nuxtjs/tailwindcss',
