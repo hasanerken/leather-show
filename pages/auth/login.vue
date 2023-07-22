@@ -67,7 +67,8 @@ const errorMsg = ref(null)
 
 <template>
   <div class="flex justify-center">
-    <n-card class="m-10 p-5 bg-blue-50" style="max-width: 500px;">
+    selam
+    <!-- <n-card class="m-10 p-5 bg-blue-50" style="max-width: 500px;">
       <n-form ref="formRef" :model="registration" :rules="rules" class="">
         <n-form-item path="email" label="e-Mail">
           <n-input v-model:value="registration.email" @keydown.enter.prevent />
@@ -94,7 +95,7 @@ const errorMsg = ref(null)
           </n-col>
         </n-row>
       </n-form>
-    </n-card>
+    </n-card> -->
   </div>
 </template>
 
