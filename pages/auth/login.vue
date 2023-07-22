@@ -47,11 +47,10 @@ function handleValidateButtonClick(e: MouseEvent) {
   e.preventDefault()
   formRef.value?.validate(
     (errors: Array<FormValidationError> | undefined) => {
-      if (!errors) {
+      if (!errors)
         signIn()
-        router.push({ name: 'auth-profile' })
-      }
-      else { message.error('Invalid') }
+
+      else message.error('Invalid')
     },
   )
 }
@@ -63,12 +62,11 @@ async function signIn() {
       email: registration.email,
       password: registration.password,
     })
-
     if (error) {
       message.error(error.message)
       throw error
     }
-    router.push({ name: 'auth-profile' })
+    router.push({ name: 'index' })
   }
   catch (error: any) {
     errorMsg.value = error.message

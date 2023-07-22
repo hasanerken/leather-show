@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const supabase = await useSupabaseClient()
+const supabase = useSupabaseClient()
+const message = useMessage()
 const { data, error } = await supabase.from('countries').select('id, name')
+if (error)
+  message.warning('Countries can not taken')
 </script>
 
 <template>
