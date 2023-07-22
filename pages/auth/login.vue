@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { FormInst, FormItemRule, FormRules, FormValidationError } from 'naive-ui'
 
-const client = useSupabaseAuthClient()
+const { auth } = useSupabaseAuthClient()
 
 interface ILogin {
   email: string
@@ -57,7 +57,7 @@ const errorMsg = ref(null)
 
 async function signIn() {
   try {
-    const { error } = await client.auth.signInWithPassword({
+    const { error } = await auth.signInWithPassword({
       email: registration.email,
       password: registration.password,
     })
