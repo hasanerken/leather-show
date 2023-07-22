@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     '@bg-dev/nuxt-naiveui',
     '@nuxtjs/tailwindcss',
     'nuxt-vercel-analytics',
-    // '@nuxtjs/supabase',
+    '@nuxtjs/supabase',
     'nuxt-typed-router',
   ],
   naiveui: {
@@ -21,7 +21,9 @@ export default defineNuxtConfig({
   },
   build: {
   },
-
+  nitro: {
+    preset: 'firebase',
+  },
   vite: {
   },
 })

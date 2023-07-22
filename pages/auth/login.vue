@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { FormInst, FormItemRule, FormRules, FormValidationError } from 'naive-ui'
 
+const client = useSupabaseClient()
+
 interface ILogin {
   email: string
   password: string
@@ -57,16 +59,16 @@ const errorMsg = ref(null)
 
 async function signIn() {
   try {
-    // const { error } = await client.auth.signInWithPassword({
-    //   email: registration.email,
-    //   password: registration.password,
-    // })
+    const { error } = await client.auth.signInWithPassword({
+      email: registration.email,
+      password: registration.password,
+    })
 
-    // if (error) {
-    //   message.error(error.message)
-    //   throw error
-    // }
-    // console.log(registration)
+    if (error) {
+      message.error(error.message)
+      throw error
+    }
+    router.push({ name: 'auth-profile' })
   }
   catch (error: any) {
     errorMsg.value = error.message
