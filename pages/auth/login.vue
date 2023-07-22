@@ -1,51 +1,61 @@
 <script setup lang="ts">
-import type { FormInst, FormItemRule, FormRules } from 'naive-ui'
+// import type { FormInst, FormItemRule, FormRules, FormValidationError } from 'naive-ui'
 
 // const { auth } = useSupabaseAuthClient()
 
-interface ILogin {
-  email: string
-  password: string
-}
+// interface ILogin {
+//   email: string
+//   password: string
+// }
 
-const formRef = ref<FormInst | null>(null)
-const message = useMessage()
+// const formRef = ref<FormInst | null>(null)
+// const message = useMessage()
 
-const registration = reactive<ILogin>({
-  email: '',
-  password: '',
-})
+// const registration = reactive<ILogin>({
+//   email: '',
+//   password: '',
+// })
 
-const rules: FormRules = {
-  email: [
-    {
-      required: true,
-      validator(rule: FormItemRule, value: string) {
-        if (!value)
-          return new Error('Email is required')
+// const rules: FormRules = {
+//   email: [
+//     {
+//       required: true,
+//       validator(rule: FormItemRule, value: string) {
+//         if (!value)
+//           return new Error('Email is required')
 
-        else if (!/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/.test(value))
-          return new Error('Not valid email')
+//         else if (!/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/.test(value))
+//           return new Error('Not valid email')
 
-        return true
-      },
-      trigger: ['input', 'blur'],
-    },
-  ],
-  password: [
-    {
-      required: true,
-      message: 'Password is required',
-    },
-  ],
-}
+//         return true
+//       },
+//       trigger: ['input', 'blur'],
+//     },
+//   ],
+//   password: [
+//     {
+//       required: true,
+//       message: 'Password is required',
+//     },
+//   ],
+// }
 
-const router = useRouter()
-function handlePasswordInput() {
-}
-function handleValidateButtonClick() {
-}
-const errorMsg = ref(null)
+// const router = useRouter()
+// function handlePasswordInput() {
+// }
+// function handleValidateButtonClick(e: MouseEvent) {
+//   e.preventDefault()
+//   formRef.value?.validate(
+//     (errors: Array<FormValidationError> | undefined) => {
+//       if (!errors) {
+//         signIn()
+//         router.push({ name: 'auth-profile' })
+//       }
+//       else { message.error('Invalid') }
+//     },
+//   )
+// }
+// const errorMsg = ref(null)
 
 // async function signIn() {
 //   try {
@@ -67,7 +77,7 @@ const errorMsg = ref(null)
 
 <template>
   <div class="flex justify-center">
-    selam
+    Hi world,
     <!-- <n-card class="m-10 p-5 bg-blue-50" style="max-width: 500px;">
       <n-form ref="formRef" :model="registration" :rules="rules" class="">
         <n-form-item path="email" label="e-Mail">
@@ -95,7 +105,10 @@ const errorMsg = ref(null)
           </n-col>
         </n-row>
       </n-form>
-    </n-card> -->
+    </n-card>
+    <div>
+      {{ errorMsg }}
+    </div> -->
   </div>
 </template>
 
