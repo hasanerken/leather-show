@@ -43,8 +43,7 @@ const rules: FormRules = {
 const router = useRouter()
 function handlePasswordInput() {
 }
-function handleValidateButtonClick(e: MouseEvent) {
-  e.preventDefault()
+function handleValidateButtonClick() {
   formRef.value?.validate(
     (errors: Array<FormValidationError> | undefined) => {
       if (!errors)
@@ -54,28 +53,30 @@ function handleValidateButtonClick(e: MouseEvent) {
     },
   )
 }
+
 const errorMsg = ref(null)
 
 async function signIn() {
-  try {
-    const { error } = await client.auth.signInWithPassword({
-      email: registration.email,
-      password: registration.password,
-    })
-    if (error) {
-      message.error(error.message)
-      throw error
-    }
-    router.push({ name: 'index' })
-  }
-  catch (error: any) {
-    errorMsg.value = error.message
-  }
+  client.auth.signInWithPassword({
+    email: registration.email,
+    password: registration.password,
+  }).then(() => {
+    router.push({ name: 'auth-profile' })
+  })
+}
+
+function signOut() {
+  client.auth.signOut().then((res) => {
+  })
+  router.push('/')
 }
 </script>
 
 <template>
   <div class="flex justify-center">
+    <n-button @click="signOut">
+      Sign out
+    </n-button>
     <n-card class="m-10 p-5 bg-blue-50" style="max-width: 500px;">
       <n-form ref="formRef" :model="registration" :rules="rules" class="">
         <n-form-item path="email" label="e-Mail">
