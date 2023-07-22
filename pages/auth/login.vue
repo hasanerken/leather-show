@@ -66,7 +66,7 @@ async function signIn() {
     //   message.error(error.message)
     //   throw error
     // }
-    console.log(registration)
+    // console.log(registration)
   }
   catch (error: any) {
     errorMsg.value = error.message
