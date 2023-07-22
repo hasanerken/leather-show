@@ -19,10 +19,6 @@ export default defineNuxtConfig({
   tailwindcss: {
     exposeConfig: true,
   },
-  nitro: {
-    preset: 'vercel-edge',
-  },
-
   build: {
   },
 
