@@ -47,9 +47,11 @@ function handleValidateButtonClick(e: MouseEvent) {
   e.preventDefault()
   formRef.value?.validate(
     (errors: Array<FormValidationError> | undefined) => {
-      if (!errors)
-        signIn()
-      else message.error('Invalid')
+      if (!errors) {
+        // signIn()
+        router.push({ name: 'auth-profile' })
+      }
+      else { message.error('Invalid') }
     },
   )
 }
@@ -66,7 +68,6 @@ async function signIn() {
       message.error(error.message)
       throw error
     }
-    router.push({ name: 'auth-profile' })
   }
   catch (error: any) {
     errorMsg.value = error.message

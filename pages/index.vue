@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { NCard } from 'naive-ui'
 </script>
 
 <template>
@@ -9,13 +8,13 @@ import { NCard } from 'naive-ui'
         <n-button>Login</n-button>
       </nuxt-link>
     </div>
-    <NCard>
+    <n-card>
       <n-button>Merhaba</n-button>
       Bu bir deneme
-    </NCard>
-    <NCard title="Merhaba" size="medium" class="">
+    </n-card>
+    <n-card title="Merhaba" size="medium" class="">
       ne haber
-    </NCard>
+    </n-card>
   </div>
 </template>
 
