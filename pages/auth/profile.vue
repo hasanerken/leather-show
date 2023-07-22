@@ -1,9 +1,11 @@
 <script setup lang="ts">
-const supabase = useSupabaseClient()
+import type { Database } from '@/types/supabase'
+
+const supabase = useSupabaseClient<Database>()
 const message = useMessage()
-const { data, error } = await supabase.from('countries').select('id, name')
+const { data, error } = await supabase.from('communication').select('*') // upsert({ email: 'mybest@gmail.com' })
 if (error)
-  message.warning('Countries can not taken')
+  message.warning('Communication can not taken')
 </script>
 
 <template>
