@@ -4,7 +4,7 @@
 <template>
   <div>
     <div>
-      For login: <nuxt-link :to="{ name: 'auth-login' }">
+      For login: <nuxt-link :to="{ name: 'auth-profile' }">
         <n-button>Login</n-button>
       </nuxt-link>
     </div>

@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     exposeConfig: true,
   },
   nitro: {
-    preset: 'digital-ocean',
+    preset: 'vercel-edge',
   },
 
   build: {
