@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/supabase',
     'nuxt-typed-router',
+    '@hebilicious/vue-query-nuxt',
   ],
   naiveui: {
     colorModePreference: 'light',
