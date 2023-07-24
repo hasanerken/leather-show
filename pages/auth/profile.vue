@@ -10,6 +10,7 @@ const { isLoading, isError, data, error } = useQuery({
   queryKey: ['todos'],
   queryFn: () => $fetch('https://xfiber-production.up.railway.app/tenants'), // Use $fetch with your api routes to get typesafety
 })
+
 if (error)
   message.warning('Communication can not taken')
 </script>
