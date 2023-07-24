@@ -4,6 +4,14 @@ export default defineNuxtConfig({
   routeRules: {
     '/auth/login/': { ssr: false },
   },
+  runtimeConfig: {
+    public: {
+      supabase: {
+        url: 'https://ewnawqxvstvxofhxqrif.supabase.co',
+        key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3bmF3cXh2c3R2eG9maHhxcmlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTAxNDUwODEsImV4cCI6MjAwNTcyMTA4MX0.cknPzzf7kLKYSHv8uAWOwXBCHuL3McHgeVdCzk2jfbk',
+      },
+    },
+  },
   modules: [
     '@bg-dev/nuxt-naiveui',
     '@nuxtjs/tailwindcss',
@@ -20,9 +28,9 @@ export default defineNuxtConfig({
   },
   build: {
   },
-  nitro: {
-    preset: 'firebase',
-  },
+  // nitro: {
+  //   preset: 'firebase',
+  // },
   vite: {
   },
 })
