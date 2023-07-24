@@ -12,6 +12,10 @@ export default defineNuxtConfig({
       },
     },
   },
+  buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+  ],
   modules: [
     '@bg-dev/nuxt-naiveui',
     '@nuxtjs/tailwindcss',
@@ -33,5 +37,10 @@ export default defineNuxtConfig({
   //   preset: 'firebase',
   // },
   vite: {
+  },
+  server: {
+    host: '0.0.0.0',
+    // eslint-disable-next-line n/prefer-global/process
+    port: process.env.PORT || 3000,
   },
 })
