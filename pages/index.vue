@@ -1,4 +1,9 @@
 <script setup lang="ts">
+definePageMeta({
+  redirect: {
+    name: 'home',
+  },
+})
 </script>
 
 <template>

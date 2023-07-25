@@ -6,10 +6,10 @@ const message = useMessage()
 // const supabase = useSupabaseClient<Database>()
 // const { data, error } = await supabase.from('tenants').select('*') // upsert({ email: 'mybest@gmail.com' })
 
-// const mydata = await $fetch('https://xfiber-production.up.railway.app/tenants')// Use $fetch with your api routes to get typesafety
+// const mydata = await $fetch('https://xfiber-production.up.railway.app/tenants')
 const { isLoading, isError, data, error, suspense } = useQuery({
   queryKey: ['todos'],
-  queryFn: () => $fetch('https://xfiber-production.up.railway.app/tenants'), // Use $fetch with your api routes to get typesafety
+  queryFn: () => $fetch('https://xfiber-production.up.railway.app/tenants'),
 })
 await suspense()
 if (error)

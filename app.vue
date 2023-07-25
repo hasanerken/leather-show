@@ -31,7 +31,9 @@ const themeConfig: ThemeConfig = {
     <NaiveConfig :theme-config="themeConfig">
       <n-dialog-provider>
         <n-message-provider>
-          <NuxtPage />
+          <NuxtLayout>
+            <NuxtPage />
+          </NuxtLayout>
         </n-message-provider>
       </n-dialog-provider>
     </NaiveConfig>

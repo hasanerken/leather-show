@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   routeRules: {
+    '/home/**': { prerender: true },
     '/auth/login/': { ssr: false },
   },
 
