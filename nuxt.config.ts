@@ -16,12 +16,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    '@bg-dev/nuxt-naiveui',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/supabase',
-    'nuxt-typed-router',
-  ],
+  modules: ['@bg-dev/nuxt-naiveui', '@nuxtjs/tailwindcss', '@nuxtjs/supabase', 'nuxt-typed-router', 'nuxt-svgo'],
 
   naiveui: {
     colorModePreference: 'light',
@@ -31,6 +26,10 @@ export default defineNuxtConfig({
 
   tailwindcss: {
     exposeConfig: true,
+  },
+
+  svgo: {
+    autoImportPath: './assets/svgs/',
   },
 
   build: {

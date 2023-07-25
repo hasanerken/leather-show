@@ -1,4 +1,6 @@
 <script setup>
+import HeroIcons from '~/assets/svgs/hero-icons.svg'
+
 definePageMeta({
   layout: 'home',
 })
@@ -26,7 +28,7 @@ definePageMeta({
           </n-space>
         </n-card>
         <n-card :bordered="false">
-          <n-image src="/public/hero-icons.svg" preview-disabled width="600px" />
+          <HeroIcons style="width: 480px;" :font-controlled="false" class="" />
         </n-card>
       </n-space>
     </n-layout-content>
